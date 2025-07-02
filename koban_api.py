@@ -16,13 +16,13 @@ def send_to_koban(data):
 
     # Construction du payload SANS niveau "Third"
     third_payload = {
-        "Label": last_name or "CV inconnu",     # Nom de famille seulement
-        "FirstName": first_name,                # Prénom seulement
+        "Label": (last_name or "CV inconnu").upper(),     
+        "FirstName": first_name,                
         "Email": data.get("email"),
         "Cell": data.get("mobile"),               
-        "Type": {"Code": "PART"},           # code du type "Particulier"
-        "Status": {"Code": "MANVAL"},      # code du statut "Manager à valider"
-        "AssignedTo": {"Extcode": "Olivier"}  # code utilisateur Olivier
+        "Type": {"Code": "PART"},           
+        "Status": {"Code": "MANVAL"},      
+        "AssignedTo": {"Extcode": "Olivier"}  
     }
 
     print("Payload envoyé :", third_payload)
