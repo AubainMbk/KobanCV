@@ -18,9 +18,9 @@ def send_to_koban(data):
         "Label": full_name or "CV inconnu",
         "Email": data.get("email"),
         "Cell": data.get("mobile"),               
-        "Type": {"Code": "PART"},           # code du type "Particulier"
-        "Status": {"Code": "MANVAL"},      # code du statut "Manager à valider"
-        "AssignedTo": {"Extcode": "Olivier"}  # code utilisateur Olivier
+        "Type": {"Code": "PART"},         
+        "Status": {"Code": "MANVAL"},      
+        "AssignedTo": {"Extcode": "Olivier"}  
     }
 
     print("Payload envoyé :", third_payload)
